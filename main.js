@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var stringUtils_1 = require("./stringUtils");
+var fs = require("fs");
+var path = require("path");
+var sentence = "Mastering Node.js opens the door to crafting efficient and scalable systems, empowering developers to build solutions that drive the web and shape the future of technology.";
+var reversedSentence = (0, stringUtils_1.reverseString)(sentence);
+var characterCount = (0, stringUtils_1.countCharacters)(sentence);
+console.log("Original Sentence: ", sentence);
+console.log("Reversed Sentence: ", reversedSentence);
+console.log("Character Count: ", characterCount);
+var reversedFilePath = path.join(__dirname, 'reversed.txt');
+fs.writeFileSync(reversedFilePath, reversedSentence);
+console.log("Reversed sentence: ".concat(reversedFilePath));
